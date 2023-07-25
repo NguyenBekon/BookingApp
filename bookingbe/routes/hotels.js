@@ -11,6 +11,7 @@ import { verifyAdmin } from "../utils/verifyToken.js";
 const router = express.Router();
 // Create
 router.post("/", verifyAdmin, createHotel);
+
 // update
 router.put("/:id", verifyAdmin, updateHotel);
 
@@ -18,7 +19,7 @@ router.put("/:id", verifyAdmin, updateHotel);
 router.delete("/:id", verifyAdmin, deleteHotel);
 
 // Get a
-router.get("/:id", getHotel);
+router.get("/find/:id", getHotel);
 
 // Get All
 router.get("/", getAllHotels);
